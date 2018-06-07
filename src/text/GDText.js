@@ -3,15 +3,29 @@ import {View, Text, StyleSheet, Dimensions} from 'react-native';
 
 const SCREEN_HEIGHT = Dimensions.get("window").height;
 
-class Title extends Component {
+class GDText extends Component {
 
   render() {
     const {
-      children
+      textStyle,
+      children,
+      header,
+      title,
     } = this.props;
+
     return (
       <View style = {styles.container}>
-        <Text style = {styles.title}>{children}</Text>
+        <Text style = {
+          [
+            styles.title,
+            textStyle,
+            header && {fontSize: 30},
+            title && {fontSize: 48},
+          ]
+        }
+        >
+          {children}
+        </Text>
       </View>
     )
   }
@@ -23,10 +37,10 @@ const styles = StyleSheet.create({
   },
   title: {
     color: "#1d1d1d",
-    fontSize: 30,
+    fontSize: 12,
     fontFamily: "Montserrat",
     letterSpacing: 2
   }
 })
 
-export default Title;
+export default GDText;

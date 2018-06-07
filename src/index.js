@@ -1,6 +1,5 @@
-import {Header, Title} from "./text";
+import {GDText} from "./text";
 
 export {
-  Header,
-  Title
+  GDText
 };
