@@ -16,11 +16,12 @@ class HugeButton extends Component {
     const {
       children,
       expand,
-      onPress
+      onPress,
+      color
     } = this.props;
 
     return (
-        <TouchableOpacity onPress={onPress} style = {styles.button}>
+        <TouchableOpacity onPress={onPress} style = {[styles.button, color]}>
           <GDText header textStyle = {{color: "#FFF"}}>{children}</GDText>
         </TouchableOpacity>
     )
